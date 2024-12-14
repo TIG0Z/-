@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIGEROZ - اليوتيوبرز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff8800;
+            --secondary-color: #ff6b00;
+            --bg-dark: #1a1a1a;
+            --bg-light: #2a2a2a;
+            --text-light: #ffffff;
+            --text-gray: #cccccc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .youtubers-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .youtubers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .youtuber-card {
+            background-color: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .youtuber-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .youtuber-banner {
+            height: 150px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+        }
+
+        .youtuber-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .youtuber-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid var(--bg-light);
+            background-color: var(--bg-dark);
+            margin: -60px auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .youtuber-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .youtuber-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .subscribe-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #ff0000;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .youtubers-container {
+                padding: 1rem;
+            }
+
+            .page-header {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .home-btn {
+                top: 10px;
+                left: 10px;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-btn">
+        <i class="fas fa-home"></i>
+        الرئيسية
+    </a>
+
+    <div class="youtubers-container">
+        <div class="page-header">
+            <h1>اليوتيوبرز</h1>
+            <p>تعرف على يوتيوبرز السيرفر المميزين</p>
+        </div>
+
+        <div class="youtubers-grid">
+            <div class="youtuber-card">
+                <div class="youtuber-banner"></div>
+                <div class="youtuber-info">
+                    <div class="youtuber-avatar">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h2 class="youtuber-name">TIGEROZ</h2>
+                    <p class="youtuber-description">قناة تايجروز على يوتيوب - محتوى مميز ومتنوع</p>
+                    <a href="https://youtube.com/@tigeroz" target="_blank" class="subscribe-btn">
+                        <i class="fab fa-youtube"></i>
+                        اشترك الآن
+                    </a>
+                </div>
+            </div>
+
+            <div class="youtuber-card">
+                <div class="youtuber-banner"></div>
+                <div class="youtuber-info">
+                    <div class="youtuber-avatar">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h2 class="youtuber-name">Marsa</h2>
+                    <p class="youtuber-description">قناة مرسا على يوتيوب - محتوى إبداعي ومتميز</p>
+                    <a href="https://youtube.com/@marsa.x" target="_blank" class="subscribe-btn">
+                        <i class="fab fa-youtube"></i>
+                        اشترك الآن
+                    </a>
+                </div>
+            </div>
+
+            <div class="youtuber-card">
+                <div class="youtuber-banner"></div>
+                <div class="youtuber-info">
+                    <div class="youtuber-avatar">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h2 class="youtuber-name">7KSH</h2>
+                    <p class="youtuber-description">قناة حكش على يوتيوب - محتوى إبداعي ومتميز</p>
+                    <a href="https://youtube.com/channel/UC0_fk-V9SaVQlnMLlAHzEUw" target="_blank" class="subscribe-btn">
+                        <i class="fab fa-youtube"></i>
+                        اشترك الآن
+                    </a>
+                </div>
+            </div>
+
+            <div class="youtuber-card">
+                <div class="youtuber-banner"></div>
+                <div class="youtuber-info">
+                    <div class="youtuber-avatar">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h2 class="youtuber-name">98R</h2>
+                    <p class="youtuber-description">قناة صقر على يوتيوب - محتوى إبداعي ومتميز</p>
+                    <a href="https://youtube.com/@98r-99" target="_blank" class="subscribe-btn">
+                        <i class="fab fa-youtube"></i>
+                        اشترك الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
+    <p>© 2024 جميع الحقوق محفوظة لتايقروز</p>
+</body>
+</html>
