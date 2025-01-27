@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - الصفحة غير موجودة</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚧</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS هنا */
+        body {
+            background-color: #000000; /* خلفية سوداء */
+            color: #FF7F0E; /* لون النصوص برتقالي */
+            font-family: 'Tajawal', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* خلفية متحركة */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF7F0E, #000000, #FF7F0E);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #FF7F0E; /* خلفية زر برتقالية */
+            color: #000000; /* لون نص الزر أسود */
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(255, 127, 14, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-button::after {
+            content: '🏠';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #e66a00; /* لون برتقالي داكن عند التمرير */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(255, 127, 14, 0.3);
+        }
+
+        .home-button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(255, 127, 14, 0.2);
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 6rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            .home-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p id="error-message">عذرًا، الصفحة التي تبحث عنها غير موجودة.</p>
+        <p id="suggestions" style="font-size: 1.2rem; color: #ccc;"></p>
+        <a href="index.html" class="home-button">العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+    <script>
+        // JavaScript هنا
+        const availablePages = ["index.html", "admin.html", "rules.html", "youtubers.html", "guide.html"];
+        const path = window.location.pathname.split('/').pop(); // الحصول على الصفحة المطلوبة مع الامتداد
+
+        const errorMessage = document.getElementById('error-message');
+        const suggestions = document.getElementById('suggestions');
+
+        if (availablePages.includes(path)) {
+            errorMessage.textContent = `عذرًا، الصفحة "${path}" غير متاحة حاليًا.`;
+        } else {
+            errorMessage.textContent = `عذرًا، الصفحة "${path}" غير موجودة.`;
+        }
+
+        // عرض الصفحات المتاحة
+        suggestions.textContent = `الصفحات المتاحة: ${availablePages.join(', ')}.`;
+    </script>
+</body>
+</html>https://tig0z.github.io/-/
