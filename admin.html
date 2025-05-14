@@ -15,8 +15,12 @@
             --bg-light: #2a2a2a;
             --text-light: #ffffff;
             --text-gray: #cccccc;
-            --owner-color: #ff0000;
-            --admin-color: #ff8800;
+            --owner-color: #ff8800;
+            --cowner-color: #ff8800;
+            --manager-color: #8aa4ff;
+            --activation-color: #1f8b4c;
+            --generaladmin-color: #056b55;
+            --ticketsadmin-color: #1abc9c;
         }
 
         * {
@@ -132,11 +136,27 @@
         }
 
         .owner .staff-banner {
-            background: linear-gradient(45deg, #ff0000, #ff4444);
+            background: linear-gradient(45deg, #ff8800 #ff8800);
         }
 
-        .admin .staff-banner {
-            background: linear-gradient(45deg, #ff8800, #ffaa33);
+        .cowner .staff-banner {
+            background: linear-gradient(45deg, #ff8800, #ff8800);
+        }
+
+        .manager .staff-banner {
+            background: linear-gradient(45deg, #8aa4ff, #8aa4ff);
+        }
+
+        .activation .staff-banner {
+            background: linear-gradient(45deg, #1f8b4c, #1f8b4c);
+        }
+
+        .generaladmin .staff-banner {
+            background: linear-gradient(45deg, #056b55, #056b55);
+        }
+
+        .ticketsadmin .staff-banner {
+            background: linear-gradient(45deg, #1abc9c, #1abc9c);
         }
 
         .staff-banner::after {
@@ -195,12 +215,32 @@
         }
 
         .owner .staff-role {
-            background: linear-gradient(45deg, var(--owner-color), #ff4444);
+            background: linear-gradient(45deg, var(--owner-color), #ff8800);
             color: white;
         }
 
-        .admin .staff-role {
-            background: linear-gradient(45deg, var(--admin-color), #ffaa33);
+        .cowner .staff-role {
+            background: linear-gradient(45deg, var(--cowner-color), #ff8800);
+            color: white;
+        }
+
+        .manager .staff-role {
+            background: linear-gradient(45deg, var(--manager-color), #8aa4ff);
+            color: white;
+        }
+
+        .activation .staff-role {
+            background: linear-gradient(45deg, var(--activation-color), #1f8b4c);
+            color: white;
+        }
+
+        .generaladmin .staff-role {
+            background: linear-gradient(45deg, var(--generaladmin-color), #056b55);
+            color: white;
+        }
+
+        .ticketsadmin .staff-role {
+            background: linear-gradient(45deg, var(--ticketsadmin-color), #1abc9c);
             color: white;
         }
 
@@ -318,7 +358,7 @@
                 </div>
             </div>
 
-            <div class="staff-card admin">
+            <div class="staff-card cowner">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -337,7 +377,7 @@
                 </div>
             </div>
             
-                        <div class="staff-card admin">
+                        <div class="staff-card manager">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -355,7 +395,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card manager">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -373,7 +413,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card manager">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -391,7 +431,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card manager">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -409,7 +449,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card manager">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -427,7 +467,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card activation">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -445,7 +485,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card generaladmin">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -463,7 +503,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card ticketsadmin">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -481,7 +521,7 @@
                     </a>
                 </div>
             </div>
-            <div class="staff-card admin">
+            <div class="staff-card ticketsadmin">
                 <div class="staff-banner"></div>
                 <div class="staff-info">
                     <div class="staff-avatar">
@@ -503,6 +543,6 @@
     </div>
 
 <p>ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
-    <p>© 2024 جميع الحقوق محفوظة لتايقروز</p>
+    <p>ALL RIGHTS RESERVED © TIGEROZ 2025</p>
 </body>
 </html>
