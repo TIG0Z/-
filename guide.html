@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIGEROZ - تعليمات الانضمام</title>
+    <title>TIGEROZ - القوانين والتعليمات</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #ff8800;
             --secondary-color: #ff6b00;
-            --accent-color: #ffa533;
             --bg-dark: #1a1a1a;
             --bg-light: #2a2a2a;
             --text-light: #ffffff;
             --text-gray: #cccccc;
+            --card-bg: rgba(42, 42, 42, 0.9);
         }
 
         * {
@@ -25,17 +25,31 @@
         }
 
         body {
-            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #000000 100%);
             color: var(--text-light);
+            min-height: 100vh;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
         }
 
         .home-btn {
             position: fixed;
             top: 20px;
             left: 20px;
-            background-color: var(--primary-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             display: flex;
@@ -44,134 +58,148 @@
             font-weight: 700;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(255, 136, 0, 0.3);
         }
 
         .home-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 136, 0, 0.4);
         }
 
         .instructions-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 2rem;
         }
 
-        .instructions-header {
+        .page-header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
+            margin-bottom: 4rem;
+            padding: 3rem;
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 136, 0, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .instructions-header h1 {
-            font-size: 2.5rem;
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .step-container {
-            background-color: var(--bg-light);
-            border-radius: 15px;
+        .rules-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            border-radius: 20px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .rule-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: inline-block;
             transition: all 0.3s ease;
         }
 
-        .step-container:hover {
-            transform: translateY(-5px);
+        .rule-card:hover .rule-icon {
+            transform: scale(1.2) rotate(10deg);
         }
 
-        .step {
-            display: flex;
-            align-items: start;
-            gap: 2rem;
-            padding: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .step:last-child {
-            border-bottom: none;
-        }
-
-        .step-number {
-            background-color: var(--primary-color);
+        .rule-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--text-light);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            font-weight: 700;
         }
 
-        .step-content {
-            flex: 1;
-        }
-
-        .step-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .step-content p {
+        .rule-description {
             color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
-        .requirement-list {
+        .rule-list {
             list-style: none;
-            margin: 1rem 0;
+            margin-top: 1rem;
         }
 
-        .requirement-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.5rem 0;
+        .rule-list li {
+            margin-bottom: 0.8rem;
+            padding-right: 1.5rem;
+            position: relative;
             color: var(--text-gray);
         }
 
-        .requirement-item i {
+        .rule-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             color: var(--primary-color);
+            position: absolute;
+            right: 0;
+            transform: translateX(1.5rem);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .rule-card:hover .rule-list li::before {
+            transform: translateX(0);
+            opacity: 1;
         }
 
         .important-note {
-            background: linear-gradient(45deg, #ff4444, #ff6b6b);
+            background: linear-gradient(135deg, rgba(255, 136, 0, 0.1), rgba(255, 107, 0, 0.1));
+            border-right: 4px solid var(--primary-color);
             padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .important-note i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .discord-button {
-            display: inline-block;
-            background-color: #5865F2;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .discord-button:hover {
-            background-color: #4752C4;
-            transform: translateY(-2px);
+            margin-top: 3rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
         }
 
         @media (max-width: 768px) {
@@ -179,16 +207,30 @@
                 padding: 1rem;
             }
 
-            .step {
-                flex-direction: column;
-                gap: 1rem;
+            .page-header {
+                padding: 2rem;
+                margin-bottom: 2rem;
             }
 
-            .home-btn {
-                top: 10px;
-                left: 10px;
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .rule-card {
+                padding: 1.5rem;
+            }
+
+            .rule-icon {
+                font-size: 2rem;
+            }
+
+            .rule-title {
+                font-size: 1.3rem;
+            }
+
+            .important-note {
+                margin-top: 2rem;
+                padding: 1rem;
             }
         }
     </style>
@@ -200,88 +242,49 @@
     </a>
 
     <div class="instructions-container">
-        <div class="instructions-header">
-            <h1>تعليمات الانضمام للسيرفر</h1>
-            <p>اتبع الخطوات التالية للانضمام إلى مجتمعنا</p>
+        <div class="page-header">
+            <h1>القوانين والتعليمات</h1>
+            <p>من فضلك اقرأ القوانين بعناية للحفاظ على مجتمع آمن ومحترم</p>
         </div>
 
-        <div class="step-container">
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>التحقق من المتطلبات</h3>
-                    <p>قبل الانضمام، تأكد من توفر المتطلبات التالية:</p>
-                    <ul class="requirement-list">
-                        <li class="requirement-item">
-                            <i class="fas fa-check-circle"></i>
-                            عمرك 14 عاماً أو أكثر
-                        </li>
-                        <li class="requirement-item">
-                            <i class="fas fa-check-circle"></i>
-                            لديك نسخة أصلية من اللعبة
-                        </li>
-                        <li class="requirement-item">
-                            <i class="fas fa-check-circle"></i>
-                            لديك هاتف جيد أو قم بجعل الجرافيك أسوء شئ
-                        </li>
-                    </ul>
-                </div>
+        <div class="rules-section">
+            <div class="rule-card">
+                <i class="fas fa-user-shield rule-icon"></i>
+                <h2 class="rule-title">قوانين عامة</h2>
+                <ul class="rule-list">
+                    <li>احترام جميع الأعضاء والإدارة</li>
+                    <li>عدم نشر المحتوى المسيء أو غير اللائق</li>
+                    <li>تجنب السلوك العدواني والمضايقات</li>
+                    <li>الالتزام بقوانين السيرفر في جميع الأوقات</li>
+                </ul>
             </div>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>قراءة القوانين</h3>
-                    <p>اقرأ جميع قوانين السيرفر بعناية وتأكد من فهمها جيداً</p>
-                    <a href="rules.html" class="discord-button">
-                        <i class="fas fa-book"></i>
-                        قراءة القوانين
-                    </a>
-                </div>
+            <div class="rule-card">
+                <i class="fas fa-comments rule-icon"></i>
+                <h2 class="rule-title">قوانين الدردشة</h2>
+                <ul class="rule-list">
+                    <li>استخدام اللغة المناسبة في المحادثات</li>
+                    <li>تجنب تكرار الرسائل والسبام</li>
+                    <li>احترام مواضيع القنوات المخصصة</li>
+                    <li>عدم نشر الروابط غير المصرح بها</li>
+                </ul>
             </div>
 
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>الانضمام إلى الديسكورد</h3>
-                    <p>انضم إلى سيرفر الديسكورد الخاص بنا للبدء في عملية التقديم</p>
-                    <a href="https://discord.gg/dBmKn8nk7m" class="discord-button">
-                        <i class="fab fa-discord"></i>
-                        انضم للديسكورد
-                    </a>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>تعبئة نموذج التقديم</h3>
-                    <p>قم بتعبئة نموذج التقديم بشكل كامل ودقيق</p>
-                    <ul class="requirement-list">
-                        <li class="requirement-item">
-                            <i class="fas fa-info-circle"></i>
-                            أجب على جميع الأسئلة بصدق
-                        </li>
-                        <li class="requirement-item">
-                            <i class="fas fa-info-circle"></i>
-                            اكتب قصة مفصلة عن شخصيتك
-                        </li>
-                        <li class="requirement-item">
-                            <i class="fas fa-info-circle"></i>
-                            انتظر رد الإدارة على طلبك
-                        </li>
-                    </ul>
-                </div>
+            <div class="rule-card">
+                <i class="fas fa-microphone-alt rule-icon"></i>
+                <h2 class="rule-title">قوانين الصوت</h2>
+                <ul class="rule-list">
+                    <li>عدم إزعاج الآخرين في القنوات الصوتية</li>
+                    <li>تجنب استخدام مؤثرات صوتية مزعجة</li>
+                    <li>احترام خصوصية المحادثات الصوتية</li>
+                    <li>الالتزام بالهدوء في القنوات المخصصة</li>
+                </ul>
             </div>
         </div>
 
         <div class="important-note">
-            <i class="fas fa-exclamation-triangle"></i>
-            <h3>ملاحظة هامة</h3>
-            <p>تأكد من قراءة جميع القوانين والتعليمات بعناية قبل التقديم. عدم الالتزام بالتعليمات قد يؤدي إلى رفض طلبك.</p>
+            <strong>ملاحظة هامة:</strong> مخالفة هذه القوانين قد يؤدي إلى اتخاذ إجراءات تأديبية تتراوح من التحذير إلى الحظر الدائم.
         </div>
     </div>
-    <p>ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
-    <p>© 2024 جميع الحقوق محفوظة لتايقروز</p>
 </body>
 </html>
